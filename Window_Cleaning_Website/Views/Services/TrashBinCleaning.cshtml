@@ -2,8 +2,43 @@
     ViewData["Title"] = "Trash Bin Cleaning Pricing";
 }
 
-<div class="container">
-    <h1>Trash Bin Cleaning Pricing</h1>
-    <p>We offer affordable plans for keeping your trash bins clean and fresh.</p>
-    <a asp-controller="Calculator" asp-action="Index" class="btn btn-success">Calculate Your Price</a>
+@{
+    ViewData["Title"] = "Trash Bin Cleaning Pricing";
+}
+
+<div class="container text-center">
+    <h1 class="mt-4">Trash Bin Cleaning Pricing</h1>
+    <p class="lead">Keep your trash bins clean, fresh, and odor-free with our professional cleaning services.</p>
+
+    <div class="row mt-4">
+        <!-- One-Time Cleaning -->
+        <div class="col-md-4">
+            <img src="~/images/trash1.jpg" alt="One-Time Cleaning" class="service-img">
+            <h3>One-Time Cleaning</h3>
+            <p>Perfect for deep cleaning your bins after months of buildup.</p>
+            <p><strong>$15 per bin</strong></p>
+        </div>
+
+        <!-- Monthly Plan -->
+        <div class="col-md-4">
+            <img src="~/images/trash2.jpg" alt="Monthly Plan" class="service-img">
+            <h3>Monthly Plan</h3>
+            <p>Enjoy fresh bins every month with our scheduled service.</p>
+            <p><strong>$10 per bin</strong></p>
+        </div>
+
+        <!-- Bi-Weekly Plan -->
+        <div class="col-md-4">
+            <img src="~/images/trash3.webp" alt="Bi-Weekly Plan" class="service-img">
+            <h3>Bi-Weekly Plan</h3>
+            <p>Best for high-use bins that need frequent cleaning.</p>
+            <p><strong>$8 per bin</strong></p>
+        </div>
+    </div>
+
+    <!-- Call-to-Action Button -->
+    <div class="mt-5">
+        <p>Get your bins cleaned today! Use our pricing calculator to estimate your cost.</p>
+        <a asp-controller="Calculator" asp-action="Index" class="btn btn-success btn-lg">Calculate Your Price</a>
+    </div>
 </div>

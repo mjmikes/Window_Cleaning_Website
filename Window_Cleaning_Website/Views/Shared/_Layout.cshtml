@@ -4,9 +4,9 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewData["Title"] - Micah's Windows</title>
+    <link rel="icon" type="image/png" href="~/images/favicon.png" asp-append-version="true" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
-    <link rel="stylesheet" href="~/Window_Cleaning_Website.styles.css" asp-append-version="true"/>
 </head>
 <body>
 <header>
@@ -23,20 +23,28 @@
                         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Price Calculator</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Calculator" asp-action="Index">Price Calculator</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 </header>
-<div class="hero">
-    <img src="~/images/hero.jpeg" alt="Micah's Windows - Hero Image" class="hero-img"/>
-    <div class="hero-text">
-        <h1>Welcome to Micah's Windows</h1>
-        <p>Your trusted window cleaning service.</p>
+
+<!-- Allow specific pages to define their own Hero Section -->
+@RenderSection("Hero", required: false)
+
+<!-- Default Hero Section (shown when no custom Hero is defined) -->
+@if (!IsSectionDefined("Hero"))
+{
+    <div class="hero">
+        <img src="~/images/hero.jpeg" alt="Micah's Windows - Hero Image" class="hero-img"/>
+        <div class="hero-text">
+            <h1>Welcome to Micah's Windows</h1>
+            <p>Your trusted window cleaning service.</p>
+        </div>
     </div>
-</div>
+}
 
 <div class="container">
     <main role="main" class="pb-3">
@@ -47,7 +55,7 @@
     <div class="container">
         &copy; 2025 - Micah's Windows
         <br/>
-        Website Created and Designed by Mjmieks
+        Website Created and Designed by Mjmikes
     </div>
 </footer>
 <script src="~/lib/jquery/dist/jquery.min.js"></script>

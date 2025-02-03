@@ -2,8 +2,53 @@
     ViewData["Title"] = "Window Cleaning Pricing";
 }
 
-<div class="container">
-    <h1>Window Cleaning Pricing</h1>
-    <p>Our pricing is based on the number and size of windows. Contact us for a free quote!</p>
-    <a asp-controller="Calculator" asp-action="Index" class="btn btn-success">Calculate Your Price</a>
+@{
+    ViewData["Title"] = "Window Cleaning Pricing";
+}
+
+<div class="container text-center">
+    <h1 class="mt-4">Window Cleaning Pricing</h1>
+    <p class="lead">Enjoy crystal-clear windows with our professional cleaning services.</p>
+
+    <div class="row mt-4">
+        <!-- Small Windows -->
+        <div class="col-md-4">
+            <img src="~/images/small1.jpg" alt="Small Windows" class="service-img">
+            <h3>Small Windows</h3>
+            <p>Ideal for bedroom and bathroom windows.</p>
+            <p><strong>$5 per window</strong></p>
+        </div>
+
+        <!-- Medium Windows -->
+        <div class="col-md-4">
+            <img src="~/images/medium2.png" alt="Medium Windows" class="service-img">
+            <h3>Medium Windows</h3>
+            <p>Common for living rooms and office spaces.</p>
+            <p><strong>$8 per window</strong></p>
+        </div>
+
+        <!-- Large Windows -->
+        <div class="col-md-4">
+            <img src="~/images/large3.webp" alt="Large Windows" class="service-img">
+            <h3>Large Windows</h3>
+            <p>Perfect for storefronts and large residential windows.</p>
+            <p><strong>$12 per window</strong></p>
+        </div>
+    </div>
+
+    <!-- Additional Services -->
+    <div class="mt-4">
+        <h2>Additional Services</h2>
+        <ul class="list-group list-group-flush text-left d-inline-block">
+            <li class="list-group-item"><strong>Screen Cleaning:</strong> $3 per screen</li>
+            <li class="list-group-item"><strong>Hard Water Stain Removal:</strong> $15 per window</li>
+            <li class="list-group-item"><strong>Full Exterior & Interior Cleaning:</strong> Extra $5 per window</li>
+        </ul>
+    </div>
+
+    <!-- Call-to-Action Button -->
+    <div class="mt-5">
+        <p>Find out your exact price with our easy-to-use calculator!</p>
+        <a asp-controller="Calculator" asp-action="Index" class="btn btn-success btn-lg">Calculate Your Price</a>
+    </div>
 </div>
