@@ -2,7 +2,36 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@{
+    ViewData["Title"] = "Micah's Windows";
+}
+
+<div class="container text-center">
+    <h1 class="mt-4">Professional Cleaning Services</h1>
+    <p class="lead">We specialize in window cleaning and trash bin cleaning to keep your home sparkling!</p>
+
+    <div class="row mt-5">
+        <!-- Window Cleaning Service -->
+        <div class="col-md-6">
+            <img src="~/images/window-cleaning.webp" alt="Window Cleaning" class="service-img">
+            <h2>Window Cleaning</h2>
+            <p>We provide streak-free window cleaning for residential and commercial properties.</p>
+            <a asp-controller="Services" asp-action="WindowCleaning" class="btn btn-primary">View Pricing</a>
+        </div>
+
+        <!-- Trash Bin Cleaning Service -->
+        <div class="col-md-6">
+            <img src="~/images/trash-bin-cleaning.jpg" alt="Trash Bin Cleaning" class="service-img">
+            <h2>Trash Bin Cleaning</h2>
+            <p>Our high-pressure cleaning ensures sanitized, odor-free trash bins.</p>
+            <a asp-controller="Services" asp-action="TrashBinCleaning" class="btn btn-primary">View Pricing</a>
+        </div>
+    </div>
+
+    <!-- Pricing Calculator Call-to-Action -->
+    <div class="mt-5">
+        <h2>Calculate Your Price Now!</h2>
+        <p>Use our pricing calculator to get an instant quote.</p>
+        <a asp-controller="Calculator" asp-action="Index" class="btn btn-success btn-lg">Start Now</a>
+    </div>
 </div>
