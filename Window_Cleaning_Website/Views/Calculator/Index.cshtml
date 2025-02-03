@@ -1,9 +1,13 @@
 @{
+    // Set the page title
     ViewData["Title"] = "Pricing Calculator";
-    Layout = "~/Views/Shared/_Layout.cshtml"; <!-- Inherits layout -->
+
+    // Specify that this view should use the shared _Layout.cshtml file
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @section Hero {
+    <!-- Custom Hero Section for the Calculator Page -->
     <div class="hero">
         <img src="~/images/calculator-hero.jpg" alt="Calculator Hero Image" class="hero-img">
         <div class="hero-text">
@@ -17,67 +21,82 @@
     <h2>Cleaning Service Calculator</h2>
     <p>Enter the number of windows and trash bins you need cleaned and get an instant price estimate.</p>
 
-    <!-- Window Cleaning Calculator -->
+    <!-- Window Cleaning Calculator Section -->
     <div class="row justify-content-center">
         <div class="col-md-6">
             <h3>Window Cleaning</h3>
 
+            <!-- Input field for Small Windows -->
             <label for="smallWindows">Small Windows ($5 each):</label>
             <input type="number" id="smallWindows" class="form-control" placeholder="Enter quantity" min="0" oninput="validateInput(this)">
 
+            <!-- Input field for Medium Windows -->
             <label for="mediumWindows" class="mt-3">Medium Windows ($8 each):</label>
             <input type="number" id="mediumWindows" class="form-control" placeholder="Enter quantity" min="0" oninput="validateInput(this)">
 
+            <!-- Input field for Large Windows -->
             <label for="largeWindows" class="mt-3">Large Windows ($12 each):</label>
             <input type="number" id="largeWindows" class="form-control" placeholder="Enter quantity" min="0" oninput="validateInput(this)">
 
-            <!-- Additional Services -->
+            <!-- Additional Services Section -->
             <h4 class="mt-4">Additional Services</h4>
 
+            <!-- Checkbox for Screen Cleaning -->
             <div class="form-check">
                 <input type="checkbox" id="screenCleaning" class="form-check-input">
                 <label class="form-check-label" for="screenCleaning">Screen Cleaning ($3 per window)</label>
             </div>
 
+            <!-- Checkbox for Hard Water Stain Removal -->
             <div class="form-check">
                 <input type="checkbox" id="stainRemoval" class="form-check-input">
                 <label class="form-check-label" for="stainRemoval">Hard Water Stain Removal ($15 per window)</label>
             </div>
 
+            <!-- Checkbox for Full Interior & Exterior Cleaning -->
             <div class="form-check">
                 <input type="checkbox" id="fullInteriorExterior" class="form-check-input">
                 <label class="form-check-label" for="fullInteriorExterior">Full Interior & Exterior Cleaning (+$5 per window)</label>
             </div>
 
+            <!-- Calculate Button for Window Cleaning -->
             <button id="calculateWindows" class="btn btn-primary mt-3">Calculate Window Cleaning</button>
             
+            <!-- Output Field for Window Cleaning Total Cost -->
             <label for="totalWindows" class="mt-3">Total Cost:</label>
             <input type="text" id="totalWindows" class="form-control" readonly>
         </div>
     </div>
 
-    <!-- Trash Bin Cleaning Calculator -->
+    <!-- Trash Bin Cleaning Calculator Section -->
     <div class="row justify-content-center mt-5">
         <div class="col-md-6">
             <h3>Trash Bin Cleaning</h3>
 
+            <!-- Input field for One-Time Cleaning Plan -->
             <label for="oneTimeBins">One-Time Cleaning ($15 per bin):</label>
             <input type="number" id="oneTimeBins" class="form-control" placeholder="Enter quantity" min="0" oninput="validateInput(this)">
 
+            <!-- Input field for Monthly Cleaning Plan -->
             <label for="monthlyBins" class="mt-3">Monthly Plan ($10 per bin):</label>
             <input type="number" id="monthlyBins" class="form-control" placeholder="Enter quantity" min="0" oninput="validateInput(this)">
 
+            <!-- Input field for Bi-Weekly Cleaning Plan -->
             <label for="biWeeklyBins" class="mt-3">Bi-Weekly Plan ($8 per bin):</label>
             <input type="number" id="biWeeklyBins" class="form-control" placeholder="Enter quantity" min="0" oninput="validateInput(this)">
 
+            <!-- Calculate Button for Trash Bin Cleaning -->
             <button id="calculateBins" class="btn btn-primary mt-3">Calculate Trash Bin Cleaning</button>
             
+            <!-- Output Field for Trash Bin Cleaning Total Cost -->
             <label for="totalBins" class="mt-3">Total Cost:</label>
             <input type="text" id="totalBins" class="form-control" readonly>
         </div>
     </div>
-
+   
+    <!-- Button to Navigate Back to Home Page -->
     <a asp-controller="Home" asp-action="Index" class="btn btn-secondary mt-4">Back to Home</a>
 </div>
 
+<!-- Link to the JavaScript file for calculations -->
 <script src="~/js/calculator.js"></script>
